@@ -1,0 +1,51 @@
+
+<h3>1. Vektörler ve Vektör Uzayları</h3>
+<p>Vektörler, hem büyüklüğü hem de yönü olan geometrik nesnelerdir. \( \mathbb{R}^n \) uzayında bir vektör, \(n\) adet sayının bir dizisi olarak temsil edilir:</p>
+<p>
+    \[
+    v = egin{bmatrix} v_1 \\ v_2 \\ dots \\ v_n \end{bmatrix}
+    \]
+</p>
+<p>Bir vektör, skalerle çarpılabilir, başka bir vektörle toplanabilir ve çeşitli diğer işlemler uygulanabilir. Örneğin, iki vektör \(v\) ve \(w\) şu şekilde toplanır:</p>
+<p>
+    \[
+    v + w = egin{bmatrix} v_1 \\ v_2 \end{bmatrix} + egin{bmatrix} w_1 \\ w_2 \end{bmatrix} = egin{bmatrix} v_1 + w_1 \\ v_2 + w_2 \end{bmatrix}
+    \]
+</p>
+
+<h4>Skaler Çarpım</h4>
+<p>Bir skaler \(a\) ile bir vektör \(v\)'yi çarptığımızda, her bir bileşen skalerle çarpılır:</p>
+<p>
+    \[
+    a \cdot v = a \cdot egin{bmatrix} v_1 \\ v_2 \end{bmatrix} = egin{bmatrix} a \cdot v_1 \\ a \cdot v_2 \end{bmatrix}
+    \]
+</p>
+
+<h4>İç Çarpım (Dot Product)</h4>
+<p>İki vektör arasındaki iç çarpım (dot product), şu şekilde hesaplanır:</p>
+<p>
+    \[
+    v \cdot w = \sum_{i=1}^{n} v_i w_i
+    \]
+</p>
+<p>Bu işlem sonucunda bir skaler elde edilir. Örneğin, iki vektör \(v\) ve \(w\) aşağıdaki gibiyse:</p>
+<p>
+    \[
+    v = egin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad w = egin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
+    \]
+</p>
+<p>Bu vektörlerin iç çarpımı şu şekilde hesaplanır:</p>
+<p>
+    \[
+    v \cdot w = (1 \cdot 4) + (2 \cdot 5) + (3 \cdot 6) = 4 + 10 + 18 = 32
+    \]
+</p>
+
+<h4>Lineer Bağımlılık ve Lineer Bağımsızlık</h4>
+<p>Bir vektör grubu lineer bağımlıysa, bu vektörlerden birkaçı diğerlerinin lineer kombinasyonu olarak yazılabilir. Örneğin, \(v_1, v_2, v_3\) vektörleri şu şartı sağlıyorsa lineer bağımlıdır:</p>
+<p>
+    \[
+    a_1 v_1 + a_2 v_2 + a_3 v_3 = 0
+    \]
+</p>
+<p>Burada tüm \(a_1, a_2, a_3\) katsayıları sıfır değilse, vektörler lineer bağımlıdır. Eğer sadece sıfır çözümü varsa, vektörler lineer bağımsızdır.</p>

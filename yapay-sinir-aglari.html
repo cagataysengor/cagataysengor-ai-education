@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapay Sinir Ağları</title>
+    <link rel="stylesheet" href="stil.css">
+    <!-- Google Fonts ekleyelim -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Yapay Sinir Ağları (ANN)</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="dersler.html">Dersler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Yapay Sinir Ağları (Artificial Neural Networks - ANN)</h2>
+        <p>Yapay sinir ağları, insan beynindeki nöronların çalışma prensiplerini taklit eden algoritmalardır. Birden fazla katmandan oluşan bu yapılar, her bir katmanda yer alan nöronların diğer katmanlardaki nöronlarla bağlantılı olduğu bir ağ yapısı oluşturur. Yapay sinir ağları, verilerden öğrenmek ve tahminlerde bulunmak için kullanılır.</p>
+
+        <h3>İleri Yayılım (Forward Pass)</h3>
+        <p>İleri yayılım, sinir ağında girişlerin nöronlar arasındaki bağlantılar aracılığıyla aktarılması sürecidir. Her nöronun çıktısı, aşağıdaki gibi hesaplanır:</p>
+        <pre>
+z_j = w_1j * x_1 + w_2j * x_2 + ... + w_nj * x_n + b_j
+        </pre>
+        <p>Bu net girdi, bir aktivasyon fonksiyonuna uygulanarak çıktı değeri (a_j) elde edilir:</p>
+        <pre>
+a_j = 1 / (1 + exp(-z_j))  (Sigmoid Fonksiyonu)
+        </pre>
+
+        <h3>Geri Yayılım (Backward Pass)</h3>
+        <p>Geri yayılım, hata fonksiyonunu minimize etmek amacıyla ağdaki ağırlıkların güncellenmesi işlemidir. Hata fonksiyonu genellikle Ortalama Kare Hata (MSE) olarak tanımlanır:</p>
+        <pre>
+E = 1/2 * Σ(y_i - y_hat_i)^2
+        </pre>
+        <p>Geri yayılım sırasında, hatanın ağırlıklara göre türevleri hesaplanır ve her bir ağırlık şu şekilde güncellenir:</p>
+        <pre>
+w_new = w_old - learning_rate * gradient
+        </pre>
+
+        <h3>Yapay Sinir Ağı Figürü</h3>
+        <img src="figures/yapay-sinir-agi.png" alt="Yapay Sinir Ağı Figürü" />
+
+        <h3>Python Örneği - İleri Yayılım ve Geri Yayılım</h3>
+        <pre>
+import numpy as np
+
+# Giriş verileri ve ağırlıklar
+x = np.array([0.5, 0.3])
+weights = np.array([0.7, 0.9])
+bias = 0.1
+
+# İleri yayılım (forward pass)
+z = np.dot(weights, x) + bias
+a = 1 / (1 + np.exp(-z))  # Sigmoid aktivasyonu
+print("İleri yayılım sonucu:", a)
+
+# Geri yayılım (backpropagation)
+y_real = 0.7  # Gerçek çıktı
+loss = 0.5 * (y_real - a)**2  # Hata hesaplama
+dE_dy_hat = a - y_real
+dy_hat_dz = a * (1 - a)  # Sigmoid türevi
+dz_dw = x
+gradient = dE_dy_hat * dy_hat_dz * dz_dw
+weights_updated = weights - 0.01 * gradient
+print("Güncellenen ağırlıklar:", weights_updated)
+        </pre>
+
+ <!-- Google Colab Butonu -->
+        <section>
+            <h3>Google Colab'de Python Kodunu Çalıştır</h3>
+            <p>Bu butona tıklayarak Python kodunu Google Colab üzerinde çalıştırabilirsiniz:</p>
+            <a href="https://colab.research.google.com/drive/1f7mG0pla1CNV04rg_B6FqMqmOeTywO1f?usp=sharing" target="_blank">
+                <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                    Google Colab'de Çalıştır
+                </button>
+            </a>
+        </section>
+    </section>
+    
+</body>
+</html>

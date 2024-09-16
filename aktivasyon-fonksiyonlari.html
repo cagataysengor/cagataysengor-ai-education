@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivasyon Fonksiyonları</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+    <header>
+        <h1>Aktivasyon Fonksiyonları</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="dersler.html">Dersler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Aktivasyon Fonksiyonları Nedir?</h2>
+        <p>Aktivasyon fonksiyonları, yapay sinir ağlarında her nöronun çıktısını belirleyen fonksiyonlardır. Sinir ağındaki her nöronun aldığı girdi, bu fonksiyon yardımıyla işlenir ve bir sonraki katmana aktarılır. Doğru aktivasyon fonksiyonunu seçmek, modelin öğrenme kapasitesini ve doğruluğunu büyük ölçüde etkiler.</p>
+    </section>
+<section>
+    <h3>1. Sigmoid Fonksiyonu</h3>
+    <p>Sigmoid fonksiyonu, her girdiyi [0, 1] aralığına sıkıştırır. Genellikle iki sınıflı sınıflandırma problemlerinde kullanılır. Matematiksel olarak şu şekilde tanımlanır:</p>
+    <pre>
+        f(z) = 1 / (1 + exp(-z))
+    </pre>
+    <p>Fonksiyonun grafiği aşağıda verilmiştir:</p>
+    <img src="figures/sigmoid.png" alt="Sigmoid Fonksiyonu Grafiği" class="aktivasyon-gorsel" />
+    
+
+    <h4>Sigmoid Fonksiyonunun Özellikleri:</h4>
+    <ul>
+        <li>Çıktı aralığı: [0, 1]</li>
+        <li>Nonlineer yapı, ancak eğimi düşük olduğunda öğrenme yavaşlar (gradient vanishing problemi).</li>
+        <li>Genellikle çıktı katmanında kullanılır.</li>
+    </ul>
+</section>
+<section>
+    <h3>2. ReLU (Rectified Linear Unit) Fonksiyonu</h3>
+    <p>ReLU fonksiyonu, yapay sinir ağlarında negatif girdilere 0, pozitif girdilere ise girdi değerini döner. Matematiksel olarak şu şekilde tanımlanır:</p>
+    <pre>
+        f(z) = max(0, z)
+    </pre>
+    <p>Fonksiyonun grafiği aşağıda verilmiştir:</p>
+    <img src="figures/relu.png" alt="ReLU Fonksiyonu Grafiği" class="aktivasyon-gorsel" />
+
+    <h4>ReLU Fonksiyonunun Özellikleri:</h4>
+    <ul>
+        <li>Çıktı aralığı: [0, +∞)</li>
+        <li>Negatif girdiler için sıfır döner, bu da sparse (seyrek) veri üretir.</li>
+        <li>Gradient vanishing problemini önler, ancak "dead ReLU" problemi olabilir (nöronlar sürekli 0 olabilir).</li>
+    </ul>
+</section>
+<section>
+    <h3>3. Tanh (Hyperbolic Tangent) Fonksiyonu</h3>
+    <p>Tanh fonksiyonu, sigmoid fonksiyonuna benzer ancak çıktıyı [-1, 1] aralığında sınırlar. Bu fonksiyon negatif ve pozitif değerleri daha güçlü bir şekilde ayırt eder.</p>
+    <pre>
+        f(z) = (exp(z) - exp(-z)) / (exp(z) + exp(-z))
+    </pre>
+    <p>Fonksiyonun grafiği aşağıda verilmiştir:</p>
+    <img src="figures/tanh.png" alt="Tanh Fonksiyonu Grafiği" class="aktivasyon-gorsel" />
+
+    <h4>Tanh Fonksiyonunun Özellikleri:</h4>
+    <ul>
+        <li>Çıktı aralığı: [-1, 1]</li>
+        <li>Sigmoid fonksiyonuna göre daha dengelidir (ortalaması sıfıra yakın).</li>
+        <li>Gradient vanishing problemi olabilir.</li>
+    </ul>
+</section>
+<section>
+    <h3>4. Leaky ReLU Fonksiyonu</h3>
+    <p>Leaky ReLU, ReLU fonksiyonuna benzer ancak negatif girdiler için küçük bir eğim kullanır. Bu, dead ReLU problemini azaltmaya yardımcı olur.</p>
+    <pre>
+        f(z) = z, z > 0
+        f(z) = alpha * z, z <= 0
+    </pre>
+    <p>Fonksiyonun grafiği aşağıda verilmiştir:</p>
+    <img src="figures/leaky_relu.png" alt="Leaky ReLU Fonksiyonu Grafiği" class="aktivasyon-gorsel" />
+
+    <h4>Leaky ReLU Fonksiyonunun Özellikleri:</h4>
+    <ul>
+        <li>Negatif girdiler için küçük bir eğim vardır (genellikle 0.01).</li>
+        <li>Dead ReLU problemini önler.</li>
+        <li>Çıktı aralığı: (-∞, +∞).</li>
+    </ul>
+</section>
+<section>
+    <h3>5. Softmax Fonksiyonu</h3>
+    <p>Softmax fonksiyonu, çok sınıflı sınıflandırma problemlerinde kullanılır. Her sınıf için bir olasılık değeri döner ve bu olasılıklar 1'e tamamlanır.</p>
+    <pre>
+        f(z)_i = exp(z_i) / Σexp(z_j)
+    </pre>
+    <p>Fonksiyonun grafiği aşağıda verilmiştir:</p>
+    <img src="figures/softmax.png" alt="Softmax Fonksiyonu Grafiği" class="aktivasyon-gorsel" />
+
+    <h4>Softmax Fonksiyonunun Özellikleri:</h4>
+    <ul>
+        <li>Çıktı her sınıf için olasılık değeridir.</li>
+        <li>Toplam çıktı 1'e eşittir.</li>
+        <li>Genellikle çıktı katmanında kullanılır.</li>
+    </ul>
+</section>
+<section>
+    <h2>Sonuç</h2>
+    <p>Aktivasyon fonksiyonları, yapay sinir ağlarında çok önemli bir yere sahiptir. ReLU, sigmoid, tanh ve softmax gibi fonksiyonlar, modelin nasıl öğrenip sonuç ürettiğini doğrudan etkiler. Her fonksiyonun doğru yerde kullanılması, modelin verimliliğini artırabilir.</p>
+</section>
+
+<section>
+    <h3>Sigmoid Fonksiyonu Kod Örneği</h3>
+    <p>Sigmoid fonksiyonu, çıktıyı [0, 1] aralığına sıkıştırır. Aşağıda bu fonksiyonun Python ile nasıl hesaplanacağı gösterilmiştir:</p>
+    <pre>
+import numpy as np
+
+# Sigmoid fonksiyonunu tanımla
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+# Z değerleri (-10, 10 arası)
+z_values = np.linspace(-10, 10, 100)
+sigmoid_values = sigmoid(z_values)
+
+# Sonuçları yazdır
+print(sigmoid_values)
+    </pre>
+</section>
+<section>
+    <h3>ReLU Fonksiyonu Kod Örneği</h3>
+    <p>ReLU fonksiyonu, negatif girdiler için sıfır döner, pozitif girdiler için girdiyi döner. Aşağıda Python kodu ile ReLU fonksiyonu hesaplanmıştır:</p>
+    <pre>
+import numpy as np
+
+# ReLU fonksiyonunu tanımla
+def relu(z):
+    return np.maximum(0, z)
+
+# Z değerleri (-10, 10 arası)
+z_values = np.linspace(-10, 10, 100)
+relu_values = relu(z_values)
+
+# Sonuçları yazdır
+print(relu_values)
+    </pre>
+</section>
+<section>
+    <h3>Tanh Fonksiyonu Kod Örneği</h3>
+    <p>Tanh fonksiyonu, girdiyi [-1, 1] aralığında sınırlar. Aşağıda Python ile tanh fonksiyonunun nasıl çalıştığı gösterilmiştir:</p>
+    <pre>
+import numpy as np
+
+# Tanh fonksiyonunu tanımla
+def tanh(z):
+    return np.tanh(z)
+
+# Z değerleri (-10, 10 arası)
+z_values = np.linspace(-10, 10, 100)
+tanh_values = tanh(z_values)
+
+# Sonuçları yazdır
+print(tanh_values)
+    </pre>
+</section>
+<section>
+    <h3>Leaky ReLU Fonksiyonu Kod Örneği</h3>
+    <p>Leaky ReLU fonksiyonu, negatif girdiler için küçük bir eğim kullanır. Aşağıda bu fonksiyonun Python ile nasıl hesaplanacağı gösterilmiştir:</p>
+    <pre>
+import numpy as np
+
+# Leaky ReLU fonksiyonunu tanımla
+def leaky_relu(z, alpha=0.01):
+    return np.where(z > 0, z, alpha * z)
+
+# Z değerleri (-10, 10 arası)
+z_values = np.linspace(-10, 10, 100)
+leaky_relu_values = leaky_relu(z_values)
+
+# Sonuçları yazdır
+print(leaky_relu_values)
+    </pre>
+</section>
+<section>
+    <h3>Softmax Fonksiyonu Kod Örneği</h3>
+    <p>Softmax fonksiyonu, çok sınıflı sınıflandırmada kullanılır ve olasılık dağılımı döner. Aşağıda Python ile softmax fonksiyonunun nasıl çalıştığı gösterilmiştir:</p>
+    <pre>
+import numpy as np
+
+# Softmax fonksiyonunu tanımla
+def softmax(z):
+    exp_z = np.exp(z - np.max(z))  # Stabilize etmek için z'den max(z) çıkarılır
+    return exp_z / np.sum(exp_z)
+
+# Z değerleri (örnek sınıf değerleri)
+z_values = np.array([1.0, 2.0, 3.0, 4.0, 1.0])
+softmax_values = softmax(z_values)
+
+# Sonuçları yazdır
+print(softmax_values)
+    </pre>
+</section>
+<section>
+    <h3>Softmax Fonksiyonu Kod Örneği</h3>
+    <p>Softmax fonksiyonu, çok sınıflı sınıflandırmada kullanılır ve olasılık dağılımı döner...</p>
+    <pre>
+# Python kodu burada...
+    </pre>
+    <a href="https://colab.research.google.com/drive/1vJ6-q4lvkJ9-8uq5kWeK68kGLnVtKtSC?usp=sharing" target="_blank">
+        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+            Google Colab'de Çalıştır
+        </button>
+    </a>
+</section>
+
+
+
+</body>
+</html>

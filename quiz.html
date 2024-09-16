@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapay Zeka Quiz</title>
+    <link rel="stylesheet" href="stil.css"> <!-- Harici stil dosyasını buraya ekleyin -->
+    
+    <style>
+        /* Modal pencerenin kendisi */
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.4); /* Arka plan karartması */
+        }
+
+        /* Modal içerik kutusu */
+        .modal-content {
+          background-color: white;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 50%;
+          position: relative;
+        }
+
+        /* Modal başlık kutusu (draggable alan) */
+        .modal-header {
+          cursor: move; /* Taşınabilir olduğunu gösteren imleç */
+          background-color: #f1f1f1;
+          padding: 10px;
+          font-size: 20px;
+          color: black;
+        }
+
+        /* Kapatma (X) butonu */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Yapay Zeka Quiz</h1>
+    </header>
+
+    <section id="quiz">
+        <!-- Sorular buraya yüklenecek -->
+    </section>
+
+    <!-- Modal Yapısı -->
+    <div id="sonucModal" class="modal">
+      <div class="modal-content" id="draggable">
+        <div id="modalHeader" class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Sonuçlar</h2>
+        </div>
+        <div id="modalSonucIcerik"></div> <!-- Sonuçlar burada görüntülenecek -->
+      </div>
+    </div>
+
+    <!-- JavaScript kodlarını buraya ekleyin -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Soruları JSON dosyasından çekmek için fetch kullanacağız
+            let sorular = [];
+            fetch('sorular.json')  // JSON dosyasını yüklüyoruz
+                .then(response => response.json())
+                .then(data => {
+                    sorular = data.sorular;
+                    baslatQuiz();  // Sorular yüklendikten sonra quiz'i başlat
+                })
+                .catch(error => console.log('Sorular yüklenirken hata oluştu:', error));  // Hata yakalama
+
+            function rastgeleSorularSec(soruHavuzu, soruSayisi) {
+                let rastgeleSorular = [];
+                let secilmisIndexler = new Set();
+                while (rastgeleSorular.length < soruSayisi) {
+                    let index = Math.floor(Math.random() * soruHavuzu.length);
+                    if (!secilmisIndexler.has(index)) {
+                        rastgeleSorular.push(soruHavuzu[index]);
+                        secilmisIndexler.add(index);
+                    }
+                }
+                return rastgeleSorular;
+            }
+
+            function baslatQuiz() {
+                const quizDiv = document.getElementById("quiz");
+                if (sorular.length === 0) {
+                    quizDiv.innerHTML = "<p>Sorular yüklenemedi, lütfen daha sonra tekrar deneyin.</p>";
+                    return;
+                }
+
+                const secilenSorular = rastgeleSorularSec(sorular, 5);  // 5 soru seç
+
+                let html = '<form id="quizForm">';  // Form başlatıldı
+
+                secilenSorular.forEach((soruObjesi, index) => {
+                    html += `<h3>${index + 1}. ${soruObjesi.soru}</h3>`;
+                    for (let secenek in soruObjesi.secenekler) {
+                        html += `<label><input type="radio" name="soru${index}" value="${secenek}"> ${secenek}) ${soruObjesi.secenekler[secenek]}</label><br>`;
+                    }
+                });
+
+                html += `<input type="button" value="Sonuçları Göster" onclick="sonuclariGoster()">`;  // Sonuçları Göster butonu
+                html += '</form>';  // Formu kapat
+
+                quizDiv.innerHTML = html;  // Soruları ekle
+            }
+
+            window.sonuclariGoster = function sonuclariGoster() {
+                let puan = 0;
+                let dogruCevaplar = 0;
+                let sonucHTML = "<h2>Sonuçlar:</h2><ul>";
+
+                // Form ve seçilen cevapları alın
+                const form = document.forms["quizForm"];
+                if (!form) {
+                    alert("Lütfen bir quiz başlatın!");
+                    return;
+                }
+
+                const secilenSorular = rastgeleSorularSec(sorular, 5); // 5 soru seçilmişse bu değişkeni kullan
+
+                secilenSorular.forEach((soruObjesi, index) => {
+                    // Kullanıcının seçtiği cevabı al
+                    const kullaniciCevabi = form[`soru${index}`].value;
+                    if (kullaniciCevabi === soruObjesi.dogru) {
+                        puan += 1;  // Doğruysa 1 puan ekle
+                        dogruCevaplar++;
+                        sonucHTML += `<li><strong>${index + 1}. Soru:</strong> Doğru Cevap! (${kullaniciCevabi})</li>`;
+                    } else {
+                        // Yanlış cevap verdiyse, doğru cevabı da göster
+                        sonucHTML += `<li><strong>${index + 1}. Soru:</strong> Yanlış Cevap (${kullaniciCevabi}). Doğru cevap: <strong>${soruObjesi.dogru}</strong></li>`;
+                    }
+                });
+
+                sonucHTML += `</ul><p><strong>Toplam Puanınız:</strong> ${puan} / 5</p>`;
+
+                // Sonuçları modal içine ekleyelim
+                document.getElementById("modalSonucIcerik").innerHTML = sonucHTML;
+
+                // Modalı açalım
+                const modal = document.getElementById("sonucModal");
+                modal.style.display = "block";
+
+                // Kapatma butonuna tıklanınca modal kapanmalı
+                const span = document.getElementsByClassName("close")[0];
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // Modalın dışında tıklama yapılınca kapanmasını engelle
+                window.onclick = function(event) {
+                    const modalContent = document.querySelector('.modal-content');
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+
+            // Modal penceresinin taşınabilmesi için sürükle ve bırak fonksiyonu
+            dragElement(document.getElementById("draggable"));
+
+            function dragElement(element) {
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                // Modal başlığına fare basıldığında hareket başlasın
+                document.getElementById("modalHeader").onmousedown = dragMouseDown;
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // Fare hareket ederken pozisyonları hesapla
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // Elementin yeni pozisyonunu ayarla
+                    element.style.top = (element.offsetTop - pos2) + "px";
+                    element.style.left = (element.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    // Fare bırakıldığında hareketi durdur
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

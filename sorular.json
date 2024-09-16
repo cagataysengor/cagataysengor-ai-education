@@ -1,0 +1,205 @@
+{
+    "sorular": [
+        {
+            "soru": "Yapay zeka nedir?",
+            "secenekler": {
+                "A": "Bir bilgisayarın insan gibi düşünmesini sağlayan sistem",
+                "B": "Veritabanı yönetimi",
+                "C": "Bir robotun donanımı",
+                "D": "Matematik işlemleri hızlandırır"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Makine öğrenmesi nedir?",
+            "secenekler": {
+                "A": "Veri analizi yöntemidir",
+                "B": "İnsan zekasını taklit eder",
+                "C": "Deneyimlerden öğrenmeyi sağlar",
+                "D": "Veritabanı optimizasyonudur"
+            },
+            "dogru": "C"
+        },
+        {
+            "soru": "Denetimli öğrenme hangi tür verilere ihtiyaç duyar?",
+            "secenekler": {
+                "A": "Sınıflandırılmamış verilere",
+                "B": "Etiketlenmiş verilere",
+                "C": "Yalnızca sayısal verilere",
+                "D": "Verisiz çalışır"
+            },
+            "dogru": "B"
+        },
+        {
+            "soru": "Yapay sinir ağlarında kullanılan bir aktivasyon fonksiyonu nedir?",
+            "secenekler": {
+                "A": "Sigmoid",
+                "B": "Softmax",
+                "C": "ReLU",
+                "D": "Hepsi"
+            },
+            "dogru": "D"
+        },
+        {
+            "soru": "Doğrusal regresyon hangi tip problemde kullanılır?",
+            "secenekler": {
+                "A": "Sınıflandırma",
+                "B": "Kümeleme",
+                "C": "Regresyon",
+                "D": "Veri temizleme"
+            },
+            "dogru": "C"
+        },
+        {
+            "soru": "Yapay zekanın bir alt dalı olan ve insan benzeri öğrenme süreçlerini taklit eden teknik nedir?",
+            "secenekler": {
+                "A": "Derin öğrenme",
+                "B": "Veri madenciliği",
+                "C": "Sinyal işleme",
+                "D": "Doğal dil işleme"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Doğal dil işleme (NLP) nedir?",
+            "secenekler": {
+                "A": "Verilerin görselleştirilmesi",
+                "B": "İnsan dilini anlamak ve işlemek için kullanılan bir teknoloji",
+                "C": "Bir sınıflandırma algoritması",
+                "D": "Ses tanıma teknolojisi"
+            },
+            "dogru": "B"
+        },
+        {
+            "soru": "Overfitting nedir?",
+            "secenekler": {
+                "A": "Modelin eğitim verisi üzerinde çok iyi sonuç verip, test verisi üzerinde başarısız olması",
+                "B": "Modelin hiç veriyle eğitilmemesi",
+                "C": "Verinin hatalı olması",
+                "D": "Veri kaybı yaşanması"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Regresyon analizinin amacı nedir?",
+            "secenekler": {
+                "A": "Verileri gruplandırmak",
+                "B": "Veriler arasındaki ilişkiyi modellemek",
+                "C": "Verileri sınıflandırmak",
+                "D": "Verileri temizlemek"
+            },
+            "dogru": "B"
+        },
+        {
+            "soru": "Destek vektör makineleri (SVM) hangi tür problemlerde kullanılır?",
+            "secenekler": {
+                "A": "Sınıflandırma ve regresyon",
+                "B": "Veri gruplama",
+                "C": "Veri temizleme",
+                "D": "Doğal dil işleme"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "K-en yakın komşu algoritması (KNN) nasıl çalışır?",
+            "secenekler": {
+                "A": "Veriye en yakın k komşusunu bulur ve sınıfını tahmin eder",
+                "B": "Verileri gruplar",
+                "C": "Veriyi lineer olarak işler",
+                "D": "Veri etiketlerini günceller"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Doğrusal olmayan verileri modellemek için hangi algoritma uygundur?",
+            "secenekler": {
+                "A": "Doğrusal regresyon",
+                "B": "Yapay sinir ağları",
+                "C": "K-nearest neighbors",
+                "D": "Destek vektör makineleri"
+            },
+            "dogru": "B"
+        },
+        {
+            "soru": "Gradyan iniş algoritması ne işe yarar?",
+            "secenekler": {
+                "A": "Bir kayıp fonksiyonunu minimize etmek",
+                "B": "Veriyi artırmak",
+                "C": "Veriyi gruplara ayırmak",
+                "D": "Veriyi test etmek"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Modelin genel performansını değerlendirmek için kullanılan metrik nedir?",
+            "secenekler": {
+                "A": "Doğruluk (accuracy)",
+                "B": "Sınıflandırma",
+                "C": "Veri ön işleme",
+                "D": "Veri madenciliği"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Çapraz doğrulama (cross-validation) nedir?",
+            "secenekler": {
+                "A": "Modelin doğruluğunu ölçmek için veriyi farklı bölmelere ayırma",
+                "B": "Veriyi gruplama",
+                "C": "Veri temizleme",
+                "D": "Veritabanı yönetimi"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Hangi yöntem overfitting'i önlemeye yardımcı olur?",
+            "secenekler": {
+                "A": "Veri artırma (data augmentation)",
+                "B": "Veriyi küçültme",
+                "C": "Veri silme",
+                "D": "Veriyi yeniden gruplama"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Yapay sinir ağlarındaki geri yayılım algoritmasının amacı nedir?",
+            "secenekler": {
+                "A": "Hataların ağ boyunca geri yayılması",
+                "B": "Veriyi gruplama",
+                "C": "Veriyi temizleme",
+                "D": "Veriyi görselleştirme"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Bir modelin eğitilmesi sırasında veriyi nasıl böleriz?",
+            "secenekler": {
+                "A": "Eğitim, test ve doğrulama verisi olarak",
+                "B": "Veri kümesini küçültmek için",
+                "C": "Veritabanı oluşturmak için",
+                "D": "Veriyi temizlemek için"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Random Forest algoritması nedir?",
+            "secenekler": {
+                "A": "Birden fazla karar ağacını kullanarak sınıflandırma yapan bir algoritma",
+                "B": "Veri gruplama algoritması",
+                "C": "Veri temizleme algoritması",
+                "D": "Veriyi artırma yöntemi"
+            },
+            "dogru": "A"
+        },
+        {
+            "soru": "Derin öğrenme nedir?",
+            "secenekler": {
+                "A": "Veriyi çok katmanlı yapay sinir ağları ile işleyen bir öğrenme yöntemi",
+                "B": "Veri temizleme yöntemi",
+                "C": "Veritabanı yönetim sistemi",
+                "D": "Veri analizi aracı"
+            },
+            "dogru": "A"
+        }
+    ]
+}
+
