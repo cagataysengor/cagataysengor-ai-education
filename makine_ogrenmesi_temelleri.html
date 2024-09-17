@@ -7,24 +7,12 @@
     <link rel="stylesheet" href="stil.css"> <!-- Stil dosyasını bağlayabilirsiniz -->
      <!-- Google Translate için Stil -->
     <style>
-        .translate-buttons {
-            margin-top: 10px;
-        }
-        .translate-buttons button {
-            background-color: #4285F4;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-/* Google Translate öğesini gizlemek için */
+        /* Google Translate widget'ı görünürlüğü */
         #google_translate_element {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
+            margin-top: 10px;
+            display: block;
+            text-align: center; /* Ortalıyor */
+       
     </style>
 </head>
 <body>
@@ -37,12 +25,7 @@
                 <li><a href="iletisim.html">İletişim</a></li>
             </ul>
         </nav>
-        <!-- Dil Seçim Butonları -->
-        <div class="translate-buttons">
-            <button onclick="translatePage('tr')">Türkçe</button>
-            <button onclick="translatePage('en')">English</button>
-	
-        </div>
+        
 <!-- Google Translate öğesi -->
         <div id="google_translate_element"></div>
     </header>
@@ -155,11 +138,15 @@
         </a>
     </section>
 
+<section id="content">
+        <!-- Buraya htm dosyaları yüklenecek -->
+    </section>
+
     <footer>
         <p>&copy; 2024 Yapay Zeka Eğitim Platformu</p>
     </footer>
 
-    <script type="text/javascript">
+   <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'tr',
@@ -167,27 +154,21 @@
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
-        function translatePage(language) {
-    var selectField = document.querySelector("select.goog-te-combo");
-    if (selectField) {
-        selectField.value = language;
-        var event;
-        if (typeof Event === 'function') {
-            event = new Event('change');
-        } else {
-            event = document.createEvent('HTMLEvents');
-            event.initEvent('change', true, true);
+
+// Dinamik olarak HTML dosyasını yükleyen fonksiyon
+        function loadHTML(filename, element) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector(element).innerHTML = data;
+                });
         }
-        selectField.dispatchEvent(event);
-    } else {
-        // Eğer selectField bulunamazsa, kısa bir süre sonra tekrar deneyin
-        setTimeout(function() {
-            translatePage(language);
-        }, 500);
-    }
-}
+
+        // Belirli htm dosyalarını içerik olarak yükleyelim
+        loadHTML("learning_algorithms.htm", "#content");
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 
 </body>
