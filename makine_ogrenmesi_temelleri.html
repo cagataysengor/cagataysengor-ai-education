@@ -5,18 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makine Öğrenmesi Temelleri</title>
     <link rel="stylesheet" href="stil.css"> <!-- Stil dosyasını bağlayabilirsiniz -->
+     <!-- Google Translate için Stil -->
+    <style>
+        .translate-buttons {
+            margin-top: 10px;
+        }
+        .translate-buttons button {
+            background-color: #4285F4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+/* Google Translate öğesini gizlemek için */
+        #google_translate_element {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Makine Öğrenmesi Temelleri</h1>
- 	<nav>
+        <nav>
             <ul>
                 <li><a href="index.html">Ana Sayfa</a></li>
                 <li><a href="dersler.html">Dersler</a></li>
                 <li><a href="iletisim.html">İletişim</a></li>
             </ul>
         </nav>
-
+        <!-- Dil Seçim Butonları -->
+        <div class="translate-buttons">
+            <button onclick="translatePage('tr')">Türkçe</button>
+            <button onclick="translatePage('en')">English</button>
+	
+        </div>
+<!-- Google Translate öğesi -->
+        <div id="google_translate_element"></div>
     </header>
 
     <section>
@@ -24,7 +52,7 @@
         <p>
             Makine öğrenmesi, bilgisayarların belirli görevleri açık bir şekilde programlanmadan öğrenmesini sağlayan bir bilim dalıdır. 
             Bu süreç, veriler üzerinde yapılan analizler sonucunda çeşitli kalıpları öğrenmek ve gelecekteki tahminlerde bulunmak anlamına gelir. 
-            Günümüzde, makine öğrenmesi pek çok farklı alanda uygulanmakta olup, özellikle veri analizi, yapay zeka, ve otomatik karar alma sistemleri gibi konularda oldukça önemlidir.
+            Günümüzde, makine öğrenmesi pek çok farklı alanda uygulanmakta olup, özellikle veri analizi, yapay zeka ve otomatik karar alma sistemleri gibi konularda oldukça önemlidir.
         </p>
         <p>
             Makine öğrenmesi algoritmaları genellikle üç ana kategoriye ayrılır:
@@ -34,146 +62,133 @@
             <li><strong>Denetimsiz Öğrenme:</strong> Bu algoritmalar, yalnızca giriş verileri ile çalışarak veri kümelerinde gizli kalıpları keşfetmeye çalışır.</li>
             <li><strong>Pekiştirmeli Öğrenme:</strong> Bu öğrenme türü, bir ajanın ödül ve ceza mekanizmalarına dayanarak çevresiyle etkileşime girdiği bir sistemde kullanılır.</li>
         </ul>
-	     <h3>Makine öğrenmesinin Temelleri</h3>
-    <p>Makine öğrenmesi temelleri genellikle aşağıdaki konuları içerir:</p>
-    <ul>
-        <li>Öğrenme Algoritmaları</li>
-        <li>Kapasite, Aşırı Uyum ve Yetersiz Uyum</li>
-        <li>Hiperparametreler ve Doğrulama Setleri</li>
-        <li>Tahmin Ediciler, Sapma ve Varyans</li>
-        <li>Maksimum Olabilirlik Tahmini</li>
-	<li>Bayesçi İstatistik</li>
-	<li>Denetimli Öğrenme Algoritmaları</li>
-	<li>Denetimsiz Öğrenme Algoritmaları</li>
-	<li>Stochastic Gradient Descent</li>
-    </ul>
-
     </section>
-<section>
+
+    <section>
         <!-- Iframe ile başka bir HTML dosyasını gömme -->
         <iframe src="learning_algorithms.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/1c8HltW0KbTHzRGjEXYVSglHDuHalY5Aj?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1c8HltW0KbTHzRGjEXYVSglHDuHalY5Aj?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-<section>
-        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="capacity_overfitting_underfitting.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/1t7xEhpZgzXmpner1P1cEIF3VkcnFOxoe?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1t7xEhpZgzXmpner1P1cEIF3VkcnFOxoe?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-<section>
-        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="hyperparameters_validation_sets.htm" width="100%" height="600px" frameborder="0"></iframe>
-<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/1OJSB4ddGuf4Mgn8pq2J4rY1i-M0qP6iC?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1OJSB4ddGuf4Mgn8pq2J4rY1i-M0qP6iC?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-<section>
-        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="estimators_bias_variance.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/14mfpxcclafnYN3C7PDTwZ-BnLbET1fQT?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/14mfpxcclafnYN3C7PDTwZ-BnLbET1fQT?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-<!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="maximum_likelihood_estimation.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/1q4C6gCjcCDdZaz6mI-w-OA0eQB6Y7NIu?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1q4C6gCjcCDdZaz6mI-w-OA0eQB6Y7NIu?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-</section>
-<!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="bayesian_statistics.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/1SXzLykuYkpGMUe4S-uRxnDL0Xj8nu1Jq?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1SXzLykuYkpGMUe4S-uRxnDL0Xj8nu1Jq?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-</section>
-<!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="supervised_learning_algorithms.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/12i66LpXwfBHHgRxmhScdHwvCKJd3nACX?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/12i66LpXwfBHHgRxmhScdHwvCKJd3nACX?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-</section>
-<!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="unsupervised_learning_algorithms.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/10Pto6rbQynhqNwp6I6ku3S9ec1nHP3Y9?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/10Pto6rbQynhqNwp6I6ku3S9ec1nHP3Y9?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-</section>
-<!-- Iframe ile başka bir HTML dosyasını gömme -->
+
+    <section>
         <iframe src="stochastic_gradient_descent.htm" width="100%" height="600px" frameborder="0"></iframe>
-	<pre>
-# Python kodu burada...
-    </pre>
-    <a href="https://colab.research.google.com/drive/1_7at_ZJeppJM0MrzVzEgFXzIkKenrMyG?usp=sharing" target="_blank">
-        <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
-            Google Colab'de Çalıştır
-        </button>
-    </a>
-	
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1_7at_ZJeppJM0MrzVzEgFXzIkKenrMyG?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
     </section>
-
-
-
-
-
-
 
     <footer>
         <p>&copy; 2024 Yapay Zeka Eğitim Platformu</p>
     </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'tr',
+                includedLanguages: 'tr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+        function translatePage(language) {
+    var selectField = document.querySelector("select.goog-te-combo");
+    if (selectField) {
+        selectField.value = language;
+        var event;
+        if (typeof Event === 'function') {
+            event = new Event('change');
+        } else {
+            event = document.createEvent('HTMLEvents');
+            event.initEvent('change', true, true);
+        }
+        selectField.dispatchEvent(event);
+    } else {
+        // Eğer selectField bulunamazsa, kısa bir süre sonra tekrar deneyin
+        setTimeout(function() {
+            translatePage(language);
+        }, 500);
+    }
+}
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 </body>
 </html>
