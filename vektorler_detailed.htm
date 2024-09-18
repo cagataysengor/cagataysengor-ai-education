@@ -17,14 +17,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <o:LastAuthor>Nail ŞENGÖR</o:LastAuthor>
   <o:Revision>2</o:Revision>
   <o:TotalTime>1</o:TotalTime>
-  <o:Created>2024-09-10T11:24:00Z</o:Created>
-  <o:LastSaved>2024-09-10T11:24:00Z</o:LastSaved>
-  <o:Pages>2</o:Pages>
-  <o:Words>192</o:Words>
-  <o:Characters>1096</o:Characters>
-  <o:Lines>9</o:Lines>
-  <o:Paragraphs>2</o:Paragraphs>
-  <o:CharactersWithSpaces>1286</o:CharactersWithSpaces>
+  <o:Created>2024-09-18T05:29:00Z</o:Created>
+  <o:LastSaved>2024-09-18T05:29:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>253</o:Words>
+  <o:Characters>1446</o:Characters>
+  <o:Lines>12</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1696</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -13902,9 +13902,8 @@ mso-border-bottom-themecolor:accent1;padding:0in 0in 4.0pt 0in'>
 </div>
 
 <p class=MsoNormal><br>
-Vektörler, hem büyüklüğü hem de yönü olan geometrik nesnelerdir. \(
-\mathbb{R}^n \) uzayında bir vektör, \(n\) adet sayının bir dizisi olarak
-temsil edilir:<br>
+Vektörler, hem büyüklüğü hem de yönü olan geometrik nesnelerdir. &#8477;^n
+uzayında bir vektör, n adet sayının bir dizisi olarak temsil edilir:<br>
 <br>
 v = [v_1, v_2, ..., v_n]<br style='mso-special-character:line-break'>
 <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
@@ -13955,6 +13954,32 @@ a_1 * v_1 + a_2 * v_2 + a_3 * v_3 = 0<br>
 <br>
 Burada tüm a_1, a_2, a_3 katsayıları sıfır değilse, vektörler lineer
 bağımlıdır. Eğer sadece sıfır çözümü varsa, vektörler lineer bağımsızdır.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal><br>
+Örnek Python Kodu:</p>
+
+<p class=MsoNormal><br>
+import numpy as np<br>
+<br>
+# İki vektör tanımlayalım<br>
+v = np.array([1, 2, 3])<br>
+w = np.array([4, 5, 6])<br>
+<br>
+# Vektörlerin toplamı<br>
+vektor_toplami = v + w<br>
+print(f&quot;Vektör Toplamı: {vektor_toplami}&quot;)<br>
+<br>
+# Skaler çarpım (Dot product)<br>
+skaler_carpim = np.dot(v, w)<br>
+print(f&quot;Skaler Çarpım: {skaler_carpim}&quot;)<br>
+<br>
+# Skaler ile vektör çarpımı<br>
+a = 2<br>
+skaler_vektor_carpim = a * v<br>
+print(f&quot;Skaler ile Vektör Çarpımı: {skaler_vektor_carpim}&quot;)<br
 style='mso-special-character:line-break'>
 <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
 <![endif]></p>

@@ -17,14 +17,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <o:LastAuthor>Nail ŞENGÖR</o:LastAuthor>
   <o:Revision>2</o:Revision>
   <o:TotalTime>1</o:TotalTime>
-  <o:Created>2024-09-10T12:48:00Z</o:Created>
-  <o:LastSaved>2024-09-10T12:48:00Z</o:LastSaved>
+  <o:Created>2024-09-18T05:51:00Z</o:Created>
+  <o:LastSaved>2024-09-18T05:51:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>188</o:Words>
-  <o:Characters>1072</o:Characters>
-  <o:Lines>8</o:Lines>
-  <o:Paragraphs>2</o:Paragraphs>
-  <o:CharactersWithSpaces>1258</o:CharactersWithSpaces>
+  <o:Words>564</o:Words>
+  <o:Characters>3218</o:Characters>
+  <o:Lines>26</o:Lines>
+  <o:Paragraphs>7</o:Paragraphs>
+  <o:CharactersWithSpaces>3775</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -698,15 +698,15 @@ href="birim_inverse_matriks_dosyalar/colorschememapping.xml">
 	mso-font-pitch:variable;
 	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
 @font-face
-	{font-family:"\@MS Gothic";
-	panose-1:2 11 6 9 7 2 5 8 2 4;
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
 	mso-font-charset:128;
 	mso-generic-font-family:modern;
 	mso-font-pitch:fixed;
 	mso-font-signature:-536870145 1791491579 134217746 0 131231 0;}
 @font-face
-	{font-family:"\@MS Mincho";
-	panose-1:2 2 6 9 4 2 5 8 3 4;
+	{font-family:"\@MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;
 	mso-font-charset:128;
 	mso-generic-font-family:modern;
 	mso-font-pitch:fixed;
@@ -13897,7 +13897,7 @@ table.MsoTableColorfulGridAccent6OddRow
 <div style='mso-element:para-border-div;border:none;border-bottom:solid #4F81BD 1.0pt;
 mso-border-bottom-themecolor:accent1;padding:0in 0in 4.0pt 0in'>
 
-<p class=MsoTitle>Birim Matris ve Ters Matris</p>
+<p class=MsoTitle>Birim Matris ve İnverse Matris</p>
 
 </div>
 
@@ -13959,6 +13959,121 @@ print(&quot;A matrisinin tersi:<br>
 result = np.dot(A, A_inverse)<br>
 print(&quot;A * A^-1 = I:<br>
 &quot;, result)<br>
+```<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>### Ters Matris (Inverse Matrix)<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>Bir matrisin tersi, matrisle çarpıldığında birim matrisi
+veren matristir. Eğer A kare bir matris ise, ters matris A&#8315;¹ şu şartı
+sağlar:</p>
+
+<p class=MsoNormal>A * A&#8315;¹ = I<br>
+Burada I, birim matristir ve köşegen elemanları 1, diğer elemanları 0 olan bir
+kare matristir.</p>
+
+<p class=MsoNormal>#### 2x2 Matrisin Tersi<br>
+Bir 2x2 matrisin tersi şu formülle hesaplanır:</p>
+
+<p class=MsoNormal>A = [[a b]<br>
+<span style='mso-spacerun:yes'>     </span>[c d]]</p>
+
+<p class=MsoNormal>Ters matris:<br>
+A&#8315;¹ = (1 / (ad - bc)) * [[d -b]<br>
+<span style='mso-spacerun:yes'>                                       
+</span>[-c a]]<br>
+Burada ad - bc, matrisin determinantıdır ve determinant sıfır değilse matrisin
+tersi vardır.</p>
+
+<p class=MsoNormal>#### 3x3 ve Daha Büyük Matrislerin Tersi<br>
+Bir 3x3 veya daha büyük matrisin tersini almak biraz daha karmaşıktır. 3x3
+matrisin tersi için adımlar aşağıdaki gibidir:</p>
+
+<p class=MsoNormal>1. **Determinant Hesaplama:** Öncelikle matrisin
+determinantı hesaplanır. Eğer determinant sıfır ise matrisin tersi yoktur.</p>
+
+<p class=MsoNormal><span style='mso-spacerun:yes'>   </span>A = [[a b c]<br>
+<span style='mso-spacerun:yes'>           </span>[d e f]<br>
+<span style='mso-spacerun:yes'>           </span>[g h i]]<br>
+Determinantı: det(A) = a(ei - fh) - b(di - fg) + c(dh - eg)</p>
+
+<p class=MsoNormal>2. **Minör Matris ve Eşlenik Matris Hesaplama:** Her eleman
+için minör matrisler hesaplanır. Minörler yardımıyla eşlenik matris elde
+edilir.</p>
+
+<p class=MsoNormal>3. **Cofaktör ve Transpoz Matris:** Cofaktör matris
+hesaplandıktan sonra transpoz alınır.</p>
+
+<p class=MsoNormal>4. **Ters Matris Hesaplama:** Ters matris şu şekilde
+hesaplanır: A&#8315;¹ = (1/det(A)) * transpoze(A*)<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>#### Python ile 3x3 Matrisin Tersini Hesaplama<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>Python'da bu adımları uygulamak için numpy kütüphanesi
+kullanılabilir. Aşağıda bir 3x3 matrisin tersinin nasıl hesaplanacağı
+gösterilmiştir:<br>
+<br>
+```python<br>
+import numpy as np<br>
+<br>
+# 3x3 Matris Tanımlama<br>
+A = np.array([[1, 2, 3],<br>
+<span style='mso-spacerun:yes'>              </span>[0, 1, 4],<br>
+<span style='mso-spacerun:yes'>              </span>[5, 6, 0]])<br>
+<br>
+# Matrisin Determinantını Hesaplama<br>
+det_A = np.linalg.det(A)<br>
+print(f&quot;Matrisin Determinantı: {det_A}&quot;)<br>
+<br>
+# Matrisin Tersini Hesaplama<br>
+if det_A != 0:<br>
+<span style='mso-spacerun:yes'>    </span>A_inverse = np.linalg.inv(A)<br>
+<span style='mso-spacerun:yes'>    </span>print(&quot;A matrisinin
+tersi:&quot;)<br>
+<span style='mso-spacerun:yes'>    </span>print(A_inverse)<br>
+else:<br>
+<span style='mso-spacerun:yes'>    </span>print(&quot;Bu matrisin tersi
+yoktur.&quot;)<br>
+<br>
+# Matris ile Tersinin Çarpımı (Birim Matris)<br>
+identity_check = np.dot(A, A_inverse)<br>
+print(&quot;A * A^-1 = I:&quot;)<br>
+print(identity_check)<br>
+```<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>### 3x4 Matrisin Tersi Alınabilir mi?<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></p>
+
+<p class=MsoNormal>Hayır, 3x4 boyutundaki bir matrisin tersi alınamaz çünkü
+ters matris yalnızca kare matrisler için tanımlıdır. Kare olmayan matrisler
+için **Moore-Penrose pseudoinverse** kullanılabilir.</p>
+
+<p class=MsoNormal>```python<br>
+import numpy as np<br>
+<br>
+# 3x4 Matris Tanımlama<br>
+A = np.array([[1, 2, 3, 4],<br>
+<span style='mso-spacerun:yes'>              </span>[5, 6, 7, 8],<br>
+<span style='mso-spacerun:yes'>              </span>[9, 10, 11, 12]])<br>
+<br>
+# Pseudoinverse Hesaplama<br>
+A_pseudo_inverse = np.linalg.pinv(A)<br>
+print(&quot;3x4 Matrisin Pseudoinverse'i:&quot;)<br>
+print(A_pseudo_inverse)<br>
 ```<br style='mso-special-character:line-break'>
 <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
 <![endif]></p>
