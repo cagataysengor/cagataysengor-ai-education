@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekrarlayan Sinir Ağlarına (RNN) Giriş</title>
+    <link rel="stylesheet" href="stil.css"> <!-- Kendi stil dosyanızı ekleyebilirsiniz -->
+<!-- Google Translate için Stil -->
+    <style>
+        /* Google Translate widget'ı görünürlüğü */
+       #google_translate_element {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Arial', sans-serif !important;
+            font-size: 16px !important;
+            background-color: #f0f0f0 !important;
+            padding: 10px !important;
+            border-radius: 8px !important;
+            display: inline-block !important;
+            border: 1px solid #ddd !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .goog-te-gadget select {
+            border: 1px solid #ddd !important;
+            border-radius: 5px !important;
+            padding: 5px !important;
+            background-color: #fff !important;
+            color: #333 !important;
+            font-size: 14px !important;
+            cursor: pointer !important;
+        }
+
+        .goog-logo-link {
+            display: none !important;
+        }
+
+        .goog-te-gadget .goog-te-combo {
+            padding: 5px !important;
+            background-color: #fff !important;
+            border: 1px solid #ccc !important;
+            border-radius: 4px !important;
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tekrarlayan Sinir Ağları (RNN)</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="dersler.html">Dersler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+	    <!-- Google Translate öğesi -->
+        <div id="google_translate_element"></div>
+    </header>
+
+
+    <section>
+        <h2>Tekrarlayan Sinir Ağlarına (RNN) Giriş</h2>
+        <p>
+            Tekrarlayan Sinir Ağları - Recurrent Neural Networks (RNN), sıralı verileri işlemek için kullanılan bir yapay sinir ağı türüdür. RNN'ler, 	    zaman serileri, metin ve konuşma gibi ardışık verilerdeki bağımlılıkları öğrenmek için özel olarak tasarlanmıştır. RNN'nin en önemli    	    özelliği, önceki adımların bilgilerini hatırlayarak, zaman içinde değişen bilgileri modelleyebilmesidir.
+
+	    RNN'ler, diğer sinir ağlarından farklı olarak, gizli katmanlarda geri beslemeye sahiptir. Bu geri besleme döngüleri, ağın önceki adımların 	    sonuçlarını hatırlamasını sağlar ve bu nedenle ardışık verilerle başa çıkmada etkilidir.
+        </p>
+	<p>
+            Bir RNN modeli genellikle aşağıdaki katmanlardan oluşur:
+        </p>
+	<ul>
+            <li><strong>Giriş Katmanı:</strong> Ardışık verilerin modele verildiği katmandır.</li>
+            <li><strong>Gizli Katmanlar:</strong> Her bir zamansal adımda veriyi işleyen ve önceki adımların bilgisini taşıyan katmanlardır.</li>
+            <li><strong>Çıkış Katmanı:</strong> Girdi verisine göre nihai tahminin yapıldığı katmandır.</li>
+        </ul>
+	<p>
+            RNN'lerin doğal dil işleme, zaman serisi tahmini, konuşma tanıma gibi birçok alanda uygulama bulduğu bilinmektedir. Ancak, uzun süreli 	    bağımlılıkları öğrenmede patlayan ve kaybolan gradyan sorunları gibi zorluklarla karşılaşabilirler.
+        </p>
+
+        <h2>Tekrarlayan Sinir Ağlarının Temel Kavramları</h2>
+        <ul>
+            <li>RNN Mimarisi</li>
+            <li>Gizli Durumlar (Hidden States)</li>
+            <li>Zamansal Adımlar (Timesteps)</li>
+            <li>İleri ve Geri Yayılım (Forward and Backward Propagation)</li>
+            <li>Gradyan Sorunları (Gradient Problems)</li>
+            <li>RNN'lerin feedforward ağlardan farkı</li>
+            <li>RNN Uygulamaları</li>
+	    <li>RNN Varyasyonları</li>
+	    
+        </ul>
+    </section>
+
+    <section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="RNN_Mimarisi.htm" width="100%" height="600px" frameborder="0"></iframe>
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1GftrlnUUdii9GwvZ-DCEM-Xtkht5-APS?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+    </section>
+    <section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="Gizli_Durumlar.htm" width="100%" height="600px" frameborder="0"></iframe>
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1evdPWYCMSO2sxvKRqkMw9F65OgVTYIMN?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+    </section>
+<section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="Zamansal_Adimlar.htm" width="100%" height="600px" frameborder="0"></iframe>
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1kB58icLK9hVWdArbwiDWA--QKeg563-y?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+    </section>
+<section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="Ileri_Geri_Yayilim.htm" width="100%" height="600px" frameborder="0"></iframe>
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1ac_gEOYAhD2mabDgXDR430BSoZxXD6fM?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+    </section>
+<section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="Gradyan_Sorunlari.htm" width="100%" height="600px" frameborder="0"></iframe>
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1K08g7Iv4bDFow8oP4uPfMxD7DcTsQPbh?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+    </section>
+<section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="RNN_ve_Feedforward_Aglarin_Farki.htm" width="100%" height="600px" frameborder="0"></iframe>
+        <pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1nGRt26yhbbXYRQljxGV56rnTee4XA8eX?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+    </section>
+<section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="RNN_Uygulamalari.htm" width="100%" height="600px" frameborder="0"></iframe>
+	<pre># Python kodu burada...</pre>
+        <a href="https://colab.research.google.com/drive/1DlLSoiT9qXazv_ZWuggIY_i6sH8dfKDW?usp=sharing" target="_blank">
+            <button style="background-color: #4285F4; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+                Google Colab'de Çalıştır
+            </button>
+        </a>
+
+            </section>
+<section>
+        <!-- Iframe ile başka bir HTML dosyasını gömme -->
+        <iframe src="RNN_Varyasyonlari.htm" width="100%" height="600px" frameborder="0"></iframe>
+            </section>
+
+
+
+
+ <footer>
+        <p>&copy; Cagatay Sengor Yapay Zeka Eğitim Platformu</p>
+    </footer>
+
+   <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'tr',
+                includedLanguages: 'tr,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+
+
+        
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+</body>
+</html>
